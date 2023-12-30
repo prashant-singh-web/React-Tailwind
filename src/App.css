@@ -28,11 +28,46 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.blink {
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-direction: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes blink {
+  10%,
+  100% {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    width: 0%;
   }
 }
+.google {
+  animation-name: dart;
+  animation-duration: 0.8s;
+  animation-direction: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes dart {
+  10% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.google-deley-1 {
+  animation-delay: 0ms;
+}
+.google-deley-2 {
+  animation-delay: 100ms;
+}
+.google-deley-3 {
+  animation-delay: 200ms;
+}
+.google-deley-4 {
+  animation-delay: 300ms;
+}
+
+

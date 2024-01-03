@@ -1,35 +1,38 @@
 // import logo = './logo.svg';
-import { HashRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
-import Loader from './componant/Loader';
-import About from './componant/About';
-import Navbar from './Navbar';
-import Profile from './componant/Profile';
-import InputCard from './componant/InputCard';
-import Navbars from './componant/Navbars';
-import Bottom from './componant/Bottom';
-
-
+import { HashRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Loader from "./componant/Loader";
+import About from "./componant/About";
+import Navbar from "./Navbar";
+import InputCard from "./componant/InputCard";
+import Navbars from "./componant/Navbars";
+import Stats from "./componant/Stats/Stats";
+import BottomMain from "./BottomMain";
+import Bottom from "./componant/Bottom_component/Bottom";
+import TrustedCompany from "./componant/TrustedCompany/TrustedCompany";
+import Pricing from "./componant/Pricing/Pricing";
+import Buttun from "./componant/Button_component/Buttun";
+import Profilecard from "./componant/Profile_card/Profilecard";
 
 function App() {
-  
   return (
     <div className="App ">
       <HashRouter>
-       <div className="w-full h-[100vh] overflow-hidden bg-gray-200 relative flex flex-row overflow-x-hidden">
-        {/* <img src="/bg.png" alt="bg" className='a absolute top-0 left-0 right-0 bottom-0 -z-20' /> */}
-        <Navbar/>
+        <Navbar />
         <Routes>
-          <Route path='/' element={<About/>}/>
-          <Route path='/loader' element={<Loader/>}/>
-          <Route path='/profile' element={<Profile/>}/>
-          <Route path='/inputcard' element={<InputCard/>}/>
-          <Route path='/navbar' element={<Navbars/>}/>
-          <Route path='/bottom' element={<Bottom/>}/>
+          <Route path="/" element={<About />} />
+          <Route path="/loader" element={<Loader />} />
+          <Route path="/profile" element={<Profilecard />} />
+          <Route path="/inputcard" element={<InputCard />} />
+          <Route path="/navbar" element={<Navbars />} />
+          <Route path="/bottom" element={<Bottom />} />
+          <Route path="/stats" element={<Stats />} />
+          <Route path="/trustedCompany" element={<TrustedCompany />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/button" element={<Buttun />} />
         </Routes>
-       </div>
+        <BottomMain />
       </HashRouter>
-    
     </div>
   );
 }

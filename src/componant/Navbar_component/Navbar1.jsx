@@ -1,19 +1,98 @@
-import React from "react";
+import React, { useState } from "react";
 import { SiTailwindcss } from "react-icons/si";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+
 
 function Navbar1() {
+  const [dropdown, setDropdown] = useState(false);
+  const [show, setShow] = useState(false)
   return (
-    <div className="w-full h-36 bg-white">
-      <div className="w-full flex flex-row justify-around items-center py-2  ">
-        <SiTailwindcss className="text-3xl text-violet-800"/>
-        <ul className="flex flex-row capitalize text-base font-medium">
-            <li className="ml-2 py-1 px-3 cursor-pointer hover:bg-violet-700 hover:text-white rounded-xl duration-200 ease-linear">home</li>
-            <li className="ml-2 py-1 px-3 cursor-pointer hover:bg-violet-700 hover:text-white rounded-xl duration-200 ease-linear">portfolio</li>
-            <li className="ml-2 py-1 px-3 cursor-pointer hover:bg-violet-700 hover:text-white rounded-xl duration-200 ease-linear">about</li>
-            <li className="ml-2 py-1 px-3 cursor-pointer hover:bg-violet-700 hover:text-white rounded-xl duration-200 ease-linear">contact</li>
-            </ul>
-            <button className="py-1 px-3 rounded-lg hover:bg-violet-500 duration-200 ease-in-out bg-violet-700 text-white">log in</button>
+    <div className="w-full min-h-[60vh] flex flex-col bg-white ">
+      <div className="w-full flex flex-row justify-around relative items-center py-2  ">
+        <SiTailwindcss className="text-3xl text-violet-800" />
+        <ul
+          className={
+            dropdown
+              ? "flex flex-row capitalize text-base font-medium   xsm:absolute xsm:top-10 xsm:left-0 xsm:w-full xsm:h-fit xsm:flex-col xsm:p-10 xsm:bg-white xsm:z-50 md:static md:flex-row md:p-0 md:w-fit"
+              : "flex flex-row capitalize text-base  font-medium xsm:hidden xsm:absolute xsm:top-10 xsm:left-0 xsm:w-full xsm:h-fit xsm:flex-col xsm:p-10 xsm:bg-white xsm:z-50 md:static md:flex md:flex-row md:p-0 md:w-fit"
+          }
+        >
+          <li className="ml-2 py-1 px-3 cursor-pointer hover:bg-violet-700 hover:text-white rounded-xl duration-200 ease-linear xsm:text-sm xsm:rounded-none">
+            home
+          </li>
+          <li className="ml-2 py-1 px-3 cursor-pointer hover:bg-violet-700 hover:text-white rounded-xl duration-200 ease-linear xsm:text-sm xsm:rounded-none">
+            portfolio
+          </li>
+          <li className="ml-2 py-1 px-3 cursor-pointer hover:bg-violet-700 hover:text-white rounded-xl duration-200 ease-linear xsm:text-sm xsm:rounded-none">
+            about
+          </li>
+          <li className="ml-2 py-1 px-3 cursor-pointer hover:bg-violet-700 hover:text-white rounded-xl duration-200 ease-linear xsm:text-sm xsm:rounded-none">
+            contact
+          </li>
+        </ul>
+        <button className="py-1 px-3 rounded-lg hover:bg-violet-500 duration-200 ease-in-out bg-violet-700 text-white xsm:text-sm">
+          log in
+        </button>
+        <RxHamburgerMenu
+          className="hidden xsm:block md:hidden cursor-pointer"
+          onClick={() => setDropdown((dropdown) => !dropdown)}
+        />
       </div>
+      <button onClick={()=>setShow(show=>!show)} className="py-2 px-5 bg-green-500">show code </button>
+      <SyntaxHighlighter language="javascript" style={oneDark} className={show ? "block":"hidden"}>
+        {`
+          import React, { useState } from "react";
+          //import React-icon
+          import { SiTailwindcss } from "react-icons/si";
+          import { RxHamburgerMenu } from "react-icons/rx";
+         
+          
+          function Navbar() {
+            // usestate for toggle buttom
+            const [dropdown, setDropdown] = useState(false);
+            return (
+              <div className="w-full min-h-[60vh] flex flex-col bg-white ">
+              <div className="w-full flex flex-row justify-around relative items-center py-2  ">
+              <SiTailwindcss className="text-3xl text-violet-800" />
+              <ul
+                className={
+                  dropdown
+                    ? "flex flex-row capitalize text-base font-medium   xsm:absolute xsm:top-10 xsm:left-0 xsm:w-full xsm:h-fit xsm:flex-col xsm:p-10 xsm:bg-white xsm:z-50 md:static md:flex-row md:p-0 md:w-fit"
+                    : "flex flex-row capitalize text-base  font-medium xsm:hidden xsm:absolute xsm:top-10 xsm:left-0 xsm:w-full xsm:h-fit xsm:flex-col xsm:p-10 xsm:bg-white xsm:z-50 md:static md:flex md:flex-row md:p-0 md:w-fit"
+                }
+              >
+                <li className="ml-2 py-1 px-3 cursor-pointer hover:bg-violet-700 hover:text-white rounded-xl duration-200 ease-linear xsm:text-sm xsm:rounded-none">
+                  home
+                </li>
+                <li className="ml-2 py-1 px-3 cursor-pointer hover:bg-violet-700 hover:text-white rounded-xl duration-200 ease-linear xsm:text-sm xsm:rounded-none">
+                  portfolio
+                </li>
+                <li className="ml-2 py-1 px-3 cursor-pointer hover:bg-violet-700 hover:text-white rounded-xl duration-200 ease-linear xsm:text-sm xsm:rounded-none">
+                  about
+                </li>
+                <li className="ml-2 py-1 px-3 cursor-pointer hover:bg-violet-700 hover:text-white rounded-xl duration-200 ease-linear xsm:text-sm xsm:rounded-none">
+                  contact
+                </li>
+              </ul>
+              <button className="py-1 px-3 rounded-lg hover:bg-violet-500 duration-200 ease-in-out bg-violet-700 text-white xsm:text-sm">
+                log in
+              </button>
+              <RxHamburgerMenu
+                className="hidden xsm:block md:hidden cursor-pointer"
+                onClick={() => setDropdown((dropdown) => !dropdown)}
+              />
+            </div>
+          
+                
+              </div>
+            );
+          }
+          
+          export default Navbar;
+        `}
+      </SyntaxHighlighter>
     </div>
   );
 }

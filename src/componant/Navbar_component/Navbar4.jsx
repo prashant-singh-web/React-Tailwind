@@ -5,7 +5,7 @@ import { IoIosArrowDown,Io, IoIosArrowUp } from "react-icons/io";
 function Navbar4() {
     const [dropdown, setDropdown] = useState(false)
   return (
-    <div className="w-full h-96 bg-white">
+    <div className="w-full min-h-[60vh] bg-white">
       <div className="w-full flex flex-row justify-around items-center py-2  ">
         <SiTailwindcss className="text-3xl text-violet-800" />
         <ul className="flex flex-row capitalize text-base font-medium">

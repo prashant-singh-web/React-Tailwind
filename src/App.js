@@ -5,14 +5,23 @@ import Loader from "./componant/Loader";
 import About from "./componant/About";
 import Navbar from "./Navbar";
 import InputCard from "./componant/InputCard";
-import Navbars from "./componant/Navbars";
+
 import Stats from "./componant/Stats/Stats";
 import BottomMain from "./BottomMain";
 import Bottom from "./componant/Bottom_component/Bottom";
 import TrustedCompany from "./componant/TrustedCompany/TrustedCompany";
 import Pricing from "./componant/Pricing/Pricing";
-import Buttun from "./componant/Button_component/Buttun";
 import Profilecard from "./componant/Profile_card/Profilecard";
+import Buttun from "./componant/Button_component/Button";
+import Homepage from "./componant/Web_Tools/Homepage";
+import ErrorPage from "./componant/ErrorPage/ErrorPage";
+import ImageBox from "./componant/ImageBox/ImageBox";
+import Navbars from "./componant/Navbar_component/Navbars";
+import LANDING_PAGE from "./componant/Landing_page/Landingpage";
+import ProductInfo from "./componant/ProductInfoPage/ProductInfo";
+
+
+
 
 function App() {
   return (
@@ -30,6 +39,11 @@ function App() {
           <Route path="/trustedCompany" element={<TrustedCompany />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/button" element={<Buttun />} />
+          <Route path="/tools" element={<Homepage />} />
+          <Route path="/ErrorPage" element={<ErrorPage />} />
+          <Route path="/imageBox" element={<ImageBox />} />
+          <Route path="/landingpage" element={<LANDING_PAGE />} />
+          <Route path="/ProductInfo" element={<ProductInfo />} />
         </Routes>
         <BottomMain />
       </HashRouter>

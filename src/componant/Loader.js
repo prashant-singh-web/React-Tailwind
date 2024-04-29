@@ -1,12 +1,17 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 function Loader() {
   
   return (
     <div className="w-full overflow-y-scroll flex flex-col dark:bg-[#111827]">
-      <p className='w-full text-center relative py-8 capitalize text-2xl font-bold text-violet-700 bg-white my-2 xsm:text-lg'>loader component</p>
-      <div className='w-full  p-5 grid grid-cols-1 gap-5  '>
+       <div className='w-full flex flex-col justify-center p-10 dark:bg-[#111827] bg-white  xsm:p-2 md:p-5 lg:p-10'>
+          <p className=' text-left my-1 text-sm font-semibold text-gray-600'><NavLink to="/" className="mr-3 hover:text-blue-700">Home</NavLink>/  Loader</p>
+          <p className='text-left  my-1 font-sans text-3xl font-bold dark:text-gray-400'>Loader</p>
+      </div>
+     
+      <div className='w-full  p-5 grid grid-cols-2 gap-5   h-fit '>
         {/* first loader */}
         <div className="w-full h-[200px] relative bg-white/50  border border-gray-300 grid place-items-center hover:shadow-xl ease-linear duration-300 cursor-pointer hover:bg-white  rounded-md">
         
@@ -59,7 +64,9 @@ function Loader() {
           <p className='absolute capitalize text-sm font-bold text-gray-700 bottom-3 left-0 w-full text-center'>plane 2</p>
         </div>
         
-        <div className="w-full flex flex-col h-1/4">
+        
+    </div>
+    <div className="w-full flex flex-col h-[80vh]">
           <p className='py-2 text-xl font-semibold'>Loader Code</p>
           <SyntaxHighlighter language='javascript' style={oneDark}>
          {`  
@@ -179,7 +186,6 @@ function Loader() {
          `}
           </SyntaxHighlighter>
         </div>
-    </div>
     </div>
   )
 }

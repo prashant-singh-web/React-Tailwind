@@ -69,5 +69,12 @@
 .google-deley-4 {
   animation-delay: 300ms;
 }
+.toggle1shadow{
+  box-shadow: 2px 2px 2px gray, inset 2px 2px 2px gray;
+}
+.toggle1shadow1{
+  box-shadow: -2px -2px 2px gray, inset -2px -2px 2px gray;
+}
+
 
 

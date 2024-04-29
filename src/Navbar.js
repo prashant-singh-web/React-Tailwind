@@ -6,11 +6,11 @@ import { IoCloseSharp } from "react-icons/io5";
 
 import { NavLink } from "react-router-dom";
 
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+
 import { RxHamburgerMenu } from "react-icons/rx";
 
 function Navbar() {
-  const [dropdown, setDropdown] = useState(false);
+ 
   const [toggle, setToggle] = useState(true);
   return (
     <div className="w-full flex flex-row dark:bg-[#111827] dark:border-b dark:border-gray-700 relative justify-between items-center py-2 px-5  bg-white  ">
@@ -29,81 +29,19 @@ function Navbar() {
         >
           home
         </NavLink>
-
-        <li
-          className={
-            dropdown
-              ? " px-3  flex text-white justify-center items-center text-center flex-row cursor-pointer bg-blue-700 relative    duration-200 ease-linear transition xsm:ease-in-out delay-150  xsm:flex-col"
-              : "  px-3 flex justify-center items-center flex-row cursor-pointer text-blue-700 hover:bg-blue-700 relative hover:text-white  duration-200 ease-linear"
+       
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? " py-1 px-4 text-sm text-white capitalize bg-blue-700 h-fit"
+              : " capitalize text-sm px-4 text-blue-700 py-1 h-fit"
           }
-          onClick={() => setDropdown((dropdown) => !dropdown)}
+          to="/tools"
         >
-         <p className="flex h-fit py-1 text-sm flex-row justify-center items-center"> Component{" "}
-          {!dropdown ? (
-            <IoIosArrowDown className="text-sm text-center ml-2" />
-          ) : (
-            <IoIosArrowUp className="text-sm text-center ml-2" />
-          )}</p>
-          <ul
-            className={
-              dropdown
-                ? "w-[150px] text-white flex flex-col z-[100]   absolute top-8 left-0  xsm:w-full xsm:static xsm:h-fit md:absolute  md:top-8 lg:top-7"
-                : "h-0 hidden"
-            }
-          >
-            <NavLink
-              to="/loader"
-              className={
-                dropdown
-                  ? "dropdown  w-full py-1  hover:bg-blue-600 text-sm capitalize font-medium bg-blue-700 "
-                  : " w-full py-1 text-white text-sm capitalize font-medium hover:bg-blue-700 hover:text-white"
-              }
-            >
-              Loader
-            </NavLink>
-            <NavLink
-              to="/navbar"
-              className={
-                dropdown
-                  ? "dropdown dropdeley  w-full py-1 hover:bg-blue-600 text-sm capitalize font-medium bg-blue-700 text-white"
-                  : " "
-              }
-            >
-              Navbar
-            </NavLink>
-            <NavLink
-              to="/profile"
-              className={
-                dropdown
-                  ? "dropdown dropdeley1  w-full py-1 hover:bg-blue-600 text-sm capitalize font-medium bg-blue-700 text-white"
-                  : " "
-              }
-            >
-              User Info
-            </NavLink>
-            <NavLink
-              to="/inputcard"
-              className={
-                dropdown
-                  ? "dropdown dropdeley2 w-full py-1 hover:bg-blue-600 text-sm capitalize font-medium bg-blue-700 text-white"
-                  : " "
-              }
-            >
-              Input form
-            </NavLink>
-            <NavLink
-              to='/trustedCompany'
-              className={
-                dropdown
-                  ? "dropdown dropdeley2 w-full py-1 hover:bg-blue-600 text-sm capitalize font-medium bg-blue-700 text-white"
-                  : " "
-              }
-            >
-              Trusted
-            </NavLink>
-          </ul>
-          
-        </li>
+          Tools
+        </NavLink>
+
+       
         <ul className="flex flex-row justify-center items-center text-sm ml-8 xsm:mt-8 md:mt-0 text-blue-700 font-semibold capitalize">
         
         <li className="ml-2 font-bold text-xl hover:text-black duration-200 ease-linear cursor-pointer dark:hover:text-gray-500 ">

@@ -9,7 +9,7 @@ import { TiTick } from "react-icons/ti";
 function Pricing1() {
   const [codeShow, setCodeShow] = useState(false);
   return (
-    <div className="w-full f font-serif my-5 flex flex-col ">
+    <div className="w-full f  my-5 flex flex-col ">
       <div className="w-full flex flex-row justify-between">
         <p className="text-lg font-medium font-sans dark:text-gray-200 ">
           Three tiers with dividers
